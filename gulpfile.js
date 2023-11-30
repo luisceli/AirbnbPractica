@@ -45,6 +45,10 @@ function versionAvif() {
         .pipe( avif( opciones ) )
         .pipe( dest('build/img'))
 }
+function copiarHTML() {
+    return src('src/html/*html')
+        .pipe(dest('build/'));
+  }
 
 function dev() {
     watch( 'src/scss/**/*.scss', css );
@@ -57,4 +61,4 @@ exports.dev = dev;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
+exports.default = series( imagenes, versionWebp, versionAvif, css, copiarHTML  );
