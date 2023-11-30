@@ -4,6 +4,7 @@
 .anfitrion{
     display: grid;
     grid-template-rows: repeat(2,1fr);
+    border-radius: 1rem;
     row-gap: 10rem;
     padding: 5rem;
 
@@ -21,18 +22,23 @@
         grid-template-rows: unset;
         background-image: linear-gradient( to right, v.$negro 0%, v.$negro 45%, transparent 55%), url('../img/anfitrion.jpg');
         background-size: 100%, auto;
-   }
-    &__contenido{
-
+        background-position: center, 50% 30%;
+        padding: 15rem 5rem ;
     }
-    &__heading{
-
-
+    @include m.desktop { 
+        background-position: center, right center;
+    }
+    &__contenido{
+        @include m.tablet { 
+            max-width: 50%;
+        }
     }
     &__descripcion{
-
+        color: v.$blanco;
     }
     &__enlace{
-
+        @include m.boton(v.$blanco,v.$negro);
+        margin-top: 2rem;
+        border-radius: .1rem;
     }
 }

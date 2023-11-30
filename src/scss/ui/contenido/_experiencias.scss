@@ -1,0 +1,19 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.experiencias{
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(3,30rem);
+        column-gap: 2rem;
+        @include m.scrollHorizontal();
+@include m.tablet { 
+    @include m.grid(3,2rem);
+}
+    }
+}
+.experiencia{
+    &__imagen{
+        border-radius: 1rem;
+    }        
+}
